@@ -1,0 +1,127 @@
+.shop-container {
+    height: calc(100vh - 92px);
+    /* overflow: hidden; */
+}
+
+.shop-main-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* CRITICAL: Prevents the parent container itself from ever scrolling */
+    background-color: #f8f9fa;
+}
+
+.shop-section-header {
+    flex-shrink: 0; /* Prevents the header from squeezing when content expands */
+    z-index: 10;
+}
+
+.shop-section-body {
+    flex-grow: 1;
+    overflow-y: auto; /* Activates your sleek custom scrollbar exclusively on this section */
+    overflow-x: hidden;
+    height: 100%;
+}
+
+/* BASE SIDEBAR: Add smooth transition definitions */
+.shop-sidebar-content {
+    width: 250px;     
+    min-width: 250px; /* Keep min-width equal to width for structural stability */
+    height: 99%;
+    overflow: hidden; /* CRITICAL: Prevents content from bursting out while shrinking */
+    transition: width 0.3s ease, min-width 0.3s ease, border-color 0.3s ease;
+}
+
+/* COLLAPSED STATE: Animate widths down to 0 and strip borders */
+#shopLayout.collapsed .shop-sidebar-content {
+    width: 0 !important;
+    min-width: 0 !important;
+    border-left-color: transparent !important; /* Prevents an orphan border line */
+}
+
+/* INSIDE CONTENT WRAPPER: Prevents text layout squeezing awkwardly while transitioning */
+.shop-sidebar-content > div {
+    width: 250px; 
+}
+
+.shop-sidebar-header {
+    height: 60px !important;
+}
+
+.shop-card {
+    min-width: 170px;
+    color: black;
+    
+}
+
+.card-img-top {
+    height: 120px;
+}
+
+.deliveryAddressBox {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+}
+
+.order-review-map {
+    height: 200px;
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid var(--gas-cyan);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.badge-count {
+    background: #dc3545;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    min-width: 26px;
+    text-align: center;
+}
+
+.pulse {
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+}
+
+.orders-card {
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.2s;
+}
+
+.low-stock {
+    color: #f59e0b;
+}
+
+.out-of-stock-text {
+    color: #dc3545;
+}
+
+.card.disabled {
+    opacity: 0.85;
+    pointer-events: none;
+    filter: grayscale(20%);
+    cursor: not-allowed;
+}
+
+.no-spinners::-webkit-outer-spin-button,
+.no-spinners::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.no-spinners[type=number] {
+    -moz-appearance: textfield;
+}

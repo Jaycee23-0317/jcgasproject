@@ -1,0 +1,165 @@
+@import url(header.css);
+
+.cart-container {
+    height: calc(100vh - 66px);
+    transition: all 0.5s;
+}
+
+.cart-panel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: white;
+}
+
+/* Scrollable Cart Items Container */
+.cart-items-container {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 150px;
+    max-height: calc(100vh - 380px);
+}
+
+.cart-empty-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.cart-items-list li{
+    border: none;
+    border-bottom: 1px solid;
+}
+
+/* Cart Summary */
+.cart-summary {
+    border-top: 1px solid;
+}
+
+.cart-panel-footer {
+    background: rgba(0,0,0,0.4);
+    border-top: 1px solid;
+}
+
+.delivery-section {
+    margin-top: 2px;
+}
+
+.delivery-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.delivery-label-row .form-label {
+    margin-bottom: 0;
+}
+
+.delivery-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.delivery-btn {
+    /* background: rgba(255,255,255,0.1); */
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #e0e0e0;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.delivery-btn:hover {
+    background: rgba(255,152,0,0.25);
+    border-color: #FF9800;
+    color: #fff;
+}
+
+.delivery-btn.active {
+    background: linear-gradient(135deg, #E65100 0%, #FF9800 100%);
+    border-color: #FF9800;
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(230,81,0,0.3);
+}
+
+.delivery-address-box {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-top: 6px;
+}
+
+.delivery-address-text {
+    font-size: 13px;
+    word-break: break-word;
+}
+
+.delivery-address-coords {
+    font-size: 12px;
+}
+
+.delivery-edit-link {
+    color: #FF9800;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 6px;
+}
+
+.delivery-edit-link:hover {
+    color: #ffb74d;
+    text-decoration: underline;
+}
+
+/* ============================================================
+   Pin Map Modal
+   ============================================================ */
+/* .pin-map-modal-content,
+.order-review-modal-content {
+    background: #2d2d2d;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+.pin-map-modal-content .modal-header,
+.order-review-modal-content .modal-header {
+    background: linear-gradient(135deg, #E65100 0%, #FF9800 100%);
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.pin-map-modal-content .modal-footer,
+.order-review-modal-content .modal-footer {
+    border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.pin-map-modal-map {
+    height: 360px;
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #FF9800;
+    z-index: 1;
+    background: #2d2d2d;
+}
+
+.pin-map-preview {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 10px 12px;
+}
+
+.pin-map-hint {
+    font-size: 13px;
+    color: #ccc;
+} */

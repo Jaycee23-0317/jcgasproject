@@ -1,0 +1,611 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+    --primary: #1e3c72;         /* Your Header Blue */
+    --secondary: #2a5298;       /* Your Secondary Blue */
+    --bg-main: #f8f9fa;         /* Your Main Background */
+    --bg-footer: #112244;       /* Your Footer Blue */
+    --text-muted: #6c757d;
+
+    --accent: #00d2ff;          /* Crisp Gas Flame Cyan/Teal */
+
+    --bg-sidebar: #112244;      /* Deep Slate Blue (Replaced your white sidebar for high contrast) */
+    /* --bg-sidebar: #1a2f56;      Deep Slate Blue (Replaced your white sidebar for high contrast) */
+    --sidebar-header-bg: #112244; /* Darkest Navy for the cart title banner block */
+    --cart-item-card: #223b6b;    /* Mid-tone blue card backplate for the added items */
+    --sidebar-text: #ffffff;      /* Pure white for title readability */
+    --sidebar-muted: #94a3b8;     /* Slate gray for labels like "₱2700.00 each" */
+
+    /* --- BUTTONS --- */
+    --btn-action-bg: #00d2ff;     /* Active "Place Order" button background */
+    --btn-action-text: #112244;
+
+    --gas-cyan: #00d2ff;
+    --gas-cyan-hover: #00b4dc;
+    --dark-navy: #112244;
+    --slate-blue: #1a2f56;
+    --card-blue: #223b6b;
+    --border-light: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar {
+    width: 4px;  
+    height: 4px; 
+}
+
+::-webkit-scrollbar-track {
+    background: #1e2d4a;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px;
+    border: 1px solid #1e2d4a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #00c6ff 0%, #294680 100%);
+}
+
+.bg-cart-panel {
+    background-color: var(--slate-blue) !important;
+    color: #ffffff !important;
+}
+
+.bg-slate-blue {
+    background-color: var(--slate-blue) !important;
+    color: #ffffff !important;
+}
+
+.bg-main {
+    background-color: var(--bg-main) !important;
+}
+
+.bg-cart-header {
+    background-color: var(--dark-navy) !important;
+    border-bottom: 1px solid var(--border-light) !important;
+}
+
+.bg-dark-navy {
+    background-color: var(--dark-navy) !important;
+    border-bottom: 1px solid var(--border-light) !important;
+}
+
+.bg-card-blue {
+    background-color: var(--card-blue) !important;
+    border-bottom: 1px solid var(--border-light) !important;
+}
+
+/* --- CART ITEM CARD WRAPPERS --- */
+.cart-item-card {
+    background-color: var(--card-blue) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 0.375rem; /* Matches Bootstrap rounded-2 */
+    transition: background-color 0.2s ease;
+}
+
+/* --- TEXT COLORS --- */
+.text-gas-cyan {
+    color: var(--gas-cyan) !important;
+}
+
+.text-cart-muted {
+    color: #94a3b8 !important; /* Soft slate gray text */
+}
+
+.text-muted {
+    color: #94a3b8 !important; /* Soft slate gray text */
+}
+
+/* --- COMPONENT BUTTONS --- */
+
+/* Primary Action Button (Place Order) */
+/* ==========================================================================
+   JC GAS FINETUNED ACTION BUTTON SUITE
+   ========================================================================== */
+
+/* 1. Primary Action (Place Order) - Now uses a gradient to match top header tabs */
+.btn-gas-primary {
+    background: linear-gradient(135deg, #00d2ff 0%, #00a8cc 100%) !important;
+    color: #112244 !important; /* Deep dark navy for optimum text readability contrast */
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    border: none !important;
+    border-radius: 0.375rem !important; /* Standard smooth matching border curvature radius */
+    box-shadow: 0 4px 12px rgba(0, 210, 255, 0.15) !important; /* Gives the button a subtle glow depth */
+    transition: all 0.2s ease-in-out !important;
+}
+
+.btn-gas-primary:hover:not(:disabled) {
+    background: linear-gradient(135deg, #00e1ff 0%, #00b8dc 100%) !important;
+    box-shadow: 0 4px 16px rgba(0, 210, 255, 0.35) !important; /* Brightens glow on cursor pointer hover states */
+    transform: translateY(-1px) !important; /* Subtle tactile lift shift animation feel */
+}
+
+.btn-gas-primary:active:not(:disabled) {
+    transform: translateY(0px) !important; /* Retracts down immediately when pressed */
+}
+
+.btn-gas-primary:disabled {
+    background: #6c757d !important; /* Fallback gray block state indicators */
+    color: rgba(255, 255, 255, 0.6) !important;
+    box-shadow: none !important;
+    transform: none !important;
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+}
+
+.btn-card-blue {
+    background: linear-gradient(135deg, #00b4db 0%, #223b6b 100%) !important;
+    color: #fff !important; /* Deep dark navy for optimum text readability contrast */
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    border: none !important;
+    border-radius: 0.375rem !important; /* Standard smooth matching border curvature radius */
+    box-shadow: 0 4px 12px rgba(0, 210, 255, 0.15) !important; /* Gives the button a subtle glow depth */
+    transition: all 0.2s ease-in-out !important;
+}
+
+.btn-card-blue:hover:not(:disabled) {
+    background: linear-gradient(135deg, #00b5db 0%, #223c6b 100%) !important;
+    box-shadow: 0 4px 16px rgba(0, 210, 255, 0.35) !important; /* Brightens glow on cursor pointer hover states */
+    transform: translateY(-1px) !important; /* Subtle tactile lift shift animation feel */
+}
+
+.btn-card-blue:active:not(:disabled) {
+    transform: translateY(0px) !important; /* Retracts down immediately when pressed */
+}
+
+.btn-card-blue:disabled {
+    background: #6c757d !important; /* Fallback gray block state indicators */
+    color: rgba(255, 255, 255, 0.6) !important;
+    box-shadow: none !important;
+    transform: none !important;
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+}
+
+
+/* 2. Secondary Actions (Home, Pin Map Buttons) - Sleek Outline Variant */
+.btn-gas-outline-primary {
+    background-color: rgba(0, 210, 255, 0.05) !important; /* Ultra-faint transparent cyan back-plate tint */
+    color: #00d2ff !important; /* Clean cyan text stroke indicators */
+    border: 1px solid rgba(0, 210, 255, 0.4) !important; /* Semi-transparent bounding border */
+    border-radius: 0.25rem !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+}
+
+.btn-gas-outline-primary:hover,
+.btn-gas-outline-primary.active {
+    background-color: #00d2ff !important; /* Flips completely to solid accent theme color */
+    color: #112244 !important; /* Dark navy text for ideal readability contrast */
+    border-color: #00d2ff !important;
+    box-shadow: 0 2px 8px rgba(0, 210, 255, 0.2) !important; /* Adds a clean active indicator glow */
+}
+
+.btn-gas-danger {
+    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    transition: transform 0.2s ease !important;
+}
+.btn-gas-danger:hover {
+    background: linear-gradient(135deg, #ff4b2b 0%, #ff416c 100%) !important;
+    transform: translateY(-1px);
+}
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.sidebar-qty-group {
+    background-color: var(--dark-navy) !important;
+    border: 1px solid var(--border-light) !important;
+    border-radius: 0.25rem;
+}
+
+.modalCard {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    /* padding: 10px 12px; */
+    /* margin-top: 6px; */
+}
+
+#layoutWrapper {
+    display: grid;
+    grid-template-columns: 270px minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main"
+        "sidebar footer";
+    min-height: 100vh;
+    transition: grid-template-columns 0.3s ease;
+
+    position: relative;
+    overflow: visible;
+}
+
+header {
+    grid-area: header;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    height: 66px;
+    color: white;
+    padding: 15px 20px;
+    border-bottom: 1px solid
+}
+
+main {
+    grid-area: main;
+    background: var(--bg-main);
+    max-height: calc(100vh - 95px);
+    overflow: hidden;
+}
+
+.main-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* CRITICAL: Prevents the parent container itself from ever scrolling */
+    background-color: #f8f9fa;
+}
+
+.main-section-header {
+    flex-shrink: 0; /* Prevents the header from squeezing when content expands */
+    z-index: 10;
+}
+
+.main-section-body {
+    flex-grow: 1;
+    overflow-y: auto; /* Activates your sleek custom scrollbar exclusively on this section */
+    overflow-x: hidden;
+    height: 100%;
+}
+
+aside {
+    grid-area: sidebar;
+    background: var(--bg-sidebar);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    overflow: hidden;
+    height: 100vh;
+    min-width: 0;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
+aside >
+.sidebar-nav,
+.navbar-nav,
+.nav-item {
+    width: 270px !important; 
+    white-space: nowrap !important; /* CRUCIAL: Stops text from wrapping vertically */
+}
+
+/* ==========================================================================
+   SIDEBAR TOGGLE BUTTON REFINEMENTS
+   ========================================================================== */
+
+/* 
+   Forces the button layout contents to align horizontally 
+   and prevents the button padding from squeezing text down.
+*/
+.sidebar-toggle-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-start; /* Keeps items left-aligned */
+    width: 100% !important;      /* Lets it stretch nicely across the header */
+    white-space: nowrap !important; /* Forces row locking */
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important; /* Removes default button outlines */
+}
+
+/* Ensure the list toggle icon retains a locked, un-shrinkable dimension */
+#sidebarToggleIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Prevents icon distortion when width changes */
+}
+
+.sidebar-header {
+    height: 66px;
+}
+
+/* Lock structural orientation for header-title */
+.sidebar-header-title {
+    display: inline-block !important;
+    flex-shrink: 0;
+}
+
+
+/* Target your text components */
+.sidebar-header-title,
+.nav-text {
+    display: inline-block !important; /* Changed from display: block or none */
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+#layoutWrapper.collapsed {
+    grid-template-columns: 70px 1fr;
+}
+
+#layoutWrapper.collapsed aside {
+    border-left: none !important;
+}
+
+#layoutWrapper #pendingCount {
+    display: none !important;
+}
+
+#layoutWrapper.collapsed #pendingCount {
+    display: block !important;
+}
+
+.sidebar-nav {
+    flex: 1;
+}
+
+.nav-item {
+    display: flex;
+    gap: 12px;
+    transition: all 0.2s ease;
+}
+
+.nav-link {
+    display: flex;
+    padding: 15px 20px;
+    border-left: 4px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+}
+
+.nav-item.active {
+    background: rgba(255,152,0,0.15);
+    color: var(--gas-cyan);
+    border-left: 4px solid;
+    border-left-color: var(--gas-cyan);
+    font-weight: 600;
+}
+
+/* Dropdown Item Custom Flex Alignment */
+.dropdown-wrapper {
+    display: block !important;
+    position: relative;
+    width: 100%;
+}
+
+.sidebar-toggle-btn i {
+    width: 30px;
+}
+
+/* Ensure icons stay beautifully aligned and fixed in place */
+.nav-link i,
+.dropdown-toggle-custom i {
+    /* display: inline-flex; */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Flexbox setup for the parent link to place arrow cleanly on the far right */
+.dropdown-toggle-custom {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Caret Arrow Configuration */
+.submenu-arrow {
+    font-size: 0.8rem;
+    transition: transform 0.2s ease;
+}
+
+/* Rotates arrow cleanly when open */
+.submenu-arrow.rotate {
+    transform: rotate(180deg); /* Fixed syntax bug from px to deg */
+}
+
+/* Submenu List - Forces clean vertical layout directly underneath parent */
+.submenu-list {
+    display: none;
+    list-style: none !important;
+    margin: 0 !important;
+    width: 100% !important;
+    position: relative !important; /* Overrides any absolute float positioning */
+    float: none !important;        /* Prevents horizontal alignment drops */
+    padding: 0 0 0 1.5rem !important; /* Indents items smoothly to the right under parent */
+    background-color: rgba(0, 0, 0, 0.15); /* Distinct nested background tint */
+}
+
+/* Submenu list item tracking block layout */
+.submenu-item {
+    display: block !important;
+    width: 100%;
+}
+
+/* Submenu Anchor Link Sizing */
+.submenu-link {
+    display: block !important;
+    padding: 0.6rem 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.submenu-link:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Highlights the current active submenu page choice */
+.submenu-item.child-active .submenu-link {
+    color: #00d2fc; /* Matches your dashboard accent blue */
+    font-weight: bold;
+    border-left: 4px solid;
+    border-left-color: var(--gas-cyan);
+}
+
+#layoutWrapper.collapsed .sidebar-header-title {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none;
+}
+
+#layoutWrapper.collapsed #logoutTriggerBtn .nav-text {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+#layoutWrapper.collapsed .nav-text {
+    display: inline-block !important; /* Keeps structural integrity */
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none; /* Prevents invisible links from being clicked */
+}
+
+/* Clean hide instructions for collapsed states */
+#layoutWrapper.collapsed .submenu-list {
+    display: none !important;
+}
+
+#layoutWrapper.collapsed .submenu-arrow {
+    display: none !important;
+}
+
+/* Enhances active color focus for parents with active children when collapsed */
+#layoutWrapper.collapsed .dropdown-wrapper.submenu-open .dropdown-toggle-custom i {
+    color: #00d2fc !important;
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+
+
+footer {
+    grid-area: footer;
+    background: var(--bg-footer);
+    color: white;
+}
+
+p {
+    font-size: 12px;
+}
+
+.section-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* #productImagePreview {
+    height: 200px;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.product-image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.product-no-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 auto;
+    border: 2px dashed #ced4da;
+    border-radius: 8px;
+    color: #adb5bd;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.product-no-image i {
+    font-size: 2.2rem;
+}
+
+.product-no-image span {
+    font-size: 0.85rem;
+}
+
+.map {
+    height: 200px;
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid var(--gas-cyan);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.cell-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;           /* Forces text to break at exactly 2 lines */
+    -webkit-box-orient: vertical;  
+    overflow: hidden;                /* Hides text that spills out past line 2 */
+    text-overflow: ellipsis;         /* Adds the '...' automatically */
+    word-break: break-word;          /* Prevents long unbroken strings from breaking layout */
+    max-width: 250px;                /* Optional: Adjust this width boundary if you want it narrower */
+    cursor: help;                    /* Optional: Changes cursor to a help question mark on hover */
+}
+
+.text-truncate-2-lines {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;           /* Limits the text to exactly 2 lines */
+    -webkit-box-orient: vertical;     /* Sets the alignment axis */
+    overflow: hidden;                /* Hides text that overflows past line 2 */
+    text-overflow: ellipsis;         /* Adds the '...' automatically */
+    word-break: break-word;          /* Prevents long unbroken words from breaking your layout */
+}
+
+.btn-branch:hover {
+    /* background: rgba(255,255,255,0.08); */
+    background: var(--dark-navy);
+    color: var(--accent);
+}

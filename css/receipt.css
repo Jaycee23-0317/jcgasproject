@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: #f5f5f5;
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+
+.receipt {
+    width: 380px;
+    margin: 0 auto;
+    padding: 25px;
+    background: #fff;
+}
+
+.header {
+    text-align: center;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #999;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.header p {
+    margin: 4px 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.receipt-title {
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.info {
+    margin-bottom: 15px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 6px;
+    font-size: 13px;
+}
+
+.info-label {
+    flex-shrink: 0;
+    font-weight: bold;
+    color: #555;
+}
+
+.info-value {
+    text-align: right;
+    word-break: break-word;
+}
+
+.divider {
+    margin: 15px 0;
+    border-top: 1px dashed #999;
+}
+
+.items {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.items th,
+.items td {
+    padding: 7px 3px;
+    font-size: 12px;
+    vertical-align: top;
+}
+
+.items th {
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.items th:nth-child(1),
+.items td:nth-child(1) {
+    width: 40%;
+}
+
+.items th:nth-child(2),
+.items td:nth-child(2) {
+    width: 12%;
+}
+
+.items th:nth-child(3),
+.items td:nth-child(3) {
+    width: 23%;
+}
+
+.items th:nth-child(4),
+.items td:nth-child(4) {
+    width: 25%;
+}
+
+.items .right {
+    text-align: right;
+}
+
+.no-items {
+    padding: 15px 0 !important;
+    text-align: center !important;
+    color: #777;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #999;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+}
+
+.thank-you {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #111;
+}
+
+@media print {
+    body {
+        padding: 0;
+        background: #fff;
+    }
+
+    .receipt {
+        width: 100%;
+        padding: 10px;
+    }
+
+    @page {
+        margin: 10mm;
+    }
+}

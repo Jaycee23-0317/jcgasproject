@@ -1,0 +1,95 @@
+body {
+    background: linear-gradient(135deg, #270c5e, #2c1aae);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    width: 100%;
+    max-width: 480px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    max-height: 90vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.btn-register {
+    background: #280cff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    width: 100%;
+}
+
+.btn-register:hover {
+    background: #dc6f03;
+}
+
+.register-title {
+    color: #FF6600;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.register-title {
+    color: #FF6600;
+}
+
+.register-page .card {
+    border-top: 5px solid #2919d4;
+}
+
+.btn-lookup {
+    background-color: #0d6efd;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+.btn-lookup:hover { background-color: #0b5ed7; }
+
+/* ---- Two-step OTP registration styles ---- */
+.subtitle {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.otp-info-box {
+    background: #e7f1ff;
+    border: 1px solid #b6d4fe;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+    color: #084298;
+}
+
+.btn-register:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+#delivery_map {
+    height: 280px;
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #dee2e6;
+    margin-top: 8px;
+}

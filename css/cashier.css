@@ -1,0 +1,306 @@
+.report-pie-chart-container {
+    position: relative;
+    width: 100%;
+    height: 150px;
+}
+
+/* Tablet / smaller desktop */
+@media (max-width: 991px) {
+    .report-pie-chart-container {
+        height: 180px;
+    }
+}
+
+/* Phone */
+@media (max-width: 576px) {
+    .report-pie-chart-container {
+        height: 280px;
+    }
+}
+
+/* =========================================
+   PRINT REPORT
+========================================= */
+
+.print-report-header {
+    display: none;
+}
+
+
+@media print {
+
+    /* =========================================
+       PAGE
+    ========================================= */
+
+    @page {
+        size: A4 portrait;
+        margin: 12mm;
+    }
+
+
+    /* =========================================
+       BASIC DOCUMENT
+    ========================================= */
+
+    html,
+    body {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        overflow: visible !important;
+
+        background: #ffffff !important;
+    }
+
+
+    /* =========================================
+       REMOVE SCREEN LAYOUT RESTRICTIONS
+    ========================================= */
+
+    main {
+        overflow: visible !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .main-content,
+    .main-section-body,
+    #sectionCard {
+
+        width: 100% !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+
+        overflow: visible !important;
+        width: 100% !important;
+        height: auto !important;
+
+        margin: 0 !important;
+    }
+
+
+    /* =========================================
+       HIDE SCREEN-ONLY ELEMENTS
+    ========================================= */
+
+    nav,
+    aside,
+    header,
+    footer,
+    .sidebar,
+    .navbar,
+    .main-section-header,
+    #loadingCard {
+
+        display: none !important;
+    }
+
+
+    /* =========================================
+       PRINT HEADER
+    ========================================= */
+
+    .print-report-header {
+        display: block !important;
+
+        text-align: center;
+
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+
+        border-bottom: 2px solid #222;
+    }
+
+    .print-report-header h1 {
+        font-size: 22px;
+        margin: 0 0 8px;
+        font-weight: 700;
+    }
+
+    .print-report-header p {
+        font-size: 11px;
+        margin: 2px 0;
+    }
+
+
+    /* =========================================
+       SUMMARY CARDS
+    ========================================= */
+
+    #sectionCard > .row:first-of-type {
+
+        display: grid !important;
+
+        grid-template-columns:
+            repeat(4, 1fr) !important;
+
+        gap: 8px !important;
+
+        margin: 0 0 15px !important;
+
+        width: 100% !important;
+
+        overflow: visible !important;
+    }
+
+    #sectionCard > .row:first-of-type .col {
+
+        width: auto !important;
+        padding: 0 !important;
+    }
+
+    #sectionCard > .row:first-of-type .card {
+
+        box-shadow: none !important;
+
+        border: 1px solid #aaa !important;
+
+        padding: 8px !important;
+
+        min-height: 65px;
+
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+
+    /* =========================================
+       PIE CHARTS
+    ========================================= */
+
+    #sectionCard > .row:nth-of-type(2) {
+
+        display: flex !important;
+
+        width: 100% !important;
+
+        margin: 0 0 12px !important;
+
+        overflow: visible !important;
+    }
+
+    #sectionCard > .row:nth-of-type(2) > .col-md-6 {
+
+        width: 50% !important;
+
+        padding: 0 5px !important;
+    }
+
+    .report-pie-chart-container {
+
+        width: 100% !important;
+
+        height: 190px !important;
+
+        overflow: visible !important;
+    }
+
+
+    /* =========================================
+       REPORT CHART CARDS
+    ========================================= */
+
+    #sectionCard > .section-card {
+
+        width: 100% !important;
+
+        height: auto !important;
+
+        min-height: 0 !important;
+
+        max-height: none !important;
+
+        margin-bottom: 15px !important;
+
+        padding: 10px !important;
+
+        box-shadow: none !important;
+
+        border: 1px solid #aaa !important;
+
+        border-radius: 4px !important;
+
+        overflow: visible !important;
+
+        /*
+         * Keep each chart together when possible.
+         */
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+
+    /* =========================================
+       CHART CONTAINERS
+    ========================================= */
+
+    #sectionCard > .section-card > div {
+
+        position: relative !important;
+
+        height: 270px !important;
+
+        max-height: none !important;
+
+        overflow: visible !important;
+    }
+
+
+    /* =========================================
+       CANVAS
+    ========================================= */
+
+    canvas {
+
+        max-width: 100% !important;
+
+        overflow: visible !important;
+    }
+
+
+    /* =========================================
+       TEXT
+    ========================================= */
+
+    h6 {
+        color: #111 !important;
+
+        font-size: 12px !important;
+    }
+
+
+    /* =========================================
+       REMOVE SCREEN EFFECTS
+    ========================================= */
+
+    .shadow,
+    .shadow-sm {
+
+        box-shadow: none !important;
+    }
+
+    .rounded {
+
+        border-radius: 3px !important;
+    }
+
+
+    /* =========================================
+       PAGE BREAK CONTROL
+    ========================================= */
+
+    .card,
+    .section-card {
+
+        page-break-inside: avoid;
+
+        break-inside: avoid;
+    }
+}
